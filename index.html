@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>💑计时器⏱</title>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            background-image: url('bg.jpg');
+            
+            /* 设置图片自适应 https://blog.csdn.net/qq_39985298/article/details/89521277?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.base&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.base */
+            background-repeat: no-repeat;
+            background-size:100% 100%;
+            background-attachment: fixed;
+
+            font-size: 85%;
+            margin: 0;
+        }
+        
+        h2 {
+            font-size: 220%;
+            font-weight: 400;
+        }
+
+      
+
+        .toyy{
+            font-size: 50%;
+            margin: 1em 0;
+            line-height: 0.5;
+            
+            position: relative;
+            top: 100px;
+        }
+        .toyy a{
+            color: rgb(255, 249, 250);
+        }
+        
+        .content {
+            position: absolute;
+            width: 100%;
+            top: 40%;
+            transform: translate(0, -50%);
+            text-align: center;
+
+            color: rgb(255, 244, 245);
+        }
+        
+        .timer {
+            font-size: 200%;
+            line-height: 1.5;
+            margin: 1em 0;
+        }
+        
+        .timer b {
+            color: rgb(253, 99, 125);
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="content">
+        <h2>😘  彭丫丫 和 凌狗狗 已经在一起了 😘</h2>
+        <div class="timer">
+            <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
+        <div class="toyy">
+            <a href="toyaya.html">👉点这儿哦👈</a>
+            
+    </div>
+
+    
+
+    <script>
+        function timer() {
+            var start = new Date(2021, 5, 1); // 2021-05-01 23:00:00
+            var t = +new Date() - 1619881200000;
+            var h = ~~(t / 1000 / 60 / 60 % 24);
+            if (h < 10) {
+                h = "0" + h;
+            }
+            var m = ~~(t / 1000 / 60 % 60);
+            if (m < 10) {
+                m = "0" + m;
+            }
+
+            var s = ~~(t / 1000 % 60);
+            if (s < 10) {
+                s = "0" + s;
+            }
+            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+            document.getElementById('h').innerHTML = h;
+            document.getElementById('m').innerHTML = m;
+            document.getElementById('s').innerHTML = s;
+        }
+        timer();
+        setInterval(timer, 1000);
+
+        
+       
+
+
+    </script>
+
+<!-- 有控制器,chrome不能自动播放,Safari可以 -->
+<!-- <audio autoplay="autoplay" loop="loop" preload="auto" controls="controls"
+    src="https://music.163.com/song/media/outer/url?id=167876.mp3">
+</audio>  -->
+
+<!-- //无控制器,完全隐藏 -->
+<audio id="music" src="https://music.163.com/song/media/outer/url?id=167876.mp3" autoplay preload="auto" loop="loop">该浏览器不支持audio属性</audio>
+
+<!-- iframe格式hidden -->
+<!-- <iframe src = "https://music.163.com/song/media/outer/url?id=167876.mp3" allow = "autoplay" hidden /> -->
+<!-- // iframe格式 -->
+<!-- <iframe allow="autoplay" src="https://music.163.com/song/media/outer/url?id=167876.mp3"></iframe> -->
+
+</body>
+
+
+
+
+
+</html>
+
+
+
+
