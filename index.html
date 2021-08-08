@@ -103,7 +103,7 @@
         timer();
         setInterval(timer, 1000);
 
-
+        // 微信手机端自动开始加载
         function audioAutoPlay(id){  
         var audio = document.getElementById(id),
             play = function(){  
@@ -130,9 +130,9 @@
     </script>
 
 <!-- 有控制器,chrome不能自动播放,Safari可以 -->
-<audio autoplay="autoplay" loop="loop" preload="auto" controls="controls"
+<!-- <audio autoplay="autoplay" loop="loop" preload="auto" controls="controls"
     src="https://music.163.com/song/media/outer/url?id=167876.mp3">
-</audio> 
+</audio>  -->
 
 <!-- //无控制器,完全隐藏 -->
 <!-- <audio id="music" src="https://music.163.com/song/media/outer/url?id=167876.mp3" autoplay preload="auto" loop="loop">该浏览器不支持audio属性</audio> -->
@@ -142,6 +142,8 @@
 <!-- // iframe格式 -->
 <!-- <iframe allow="autoplay" src="https://music.163.com/song/media/outer/url?id=167876.mp3"></iframe> -->
 
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=167876&auto=1&height=32"></iframe>
 </body>
 
 
