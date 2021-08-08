@@ -54,7 +54,7 @@
         
         .timer {
             font-size: 200%;
-            line-height: 1.5;
+            line-height: 0.75;
             margin: 1em 0;
         }
         
@@ -67,7 +67,8 @@
 <body>
    
     <div class="content">
-        <h2>😘  彭丫丫 和 凌狗狗 已经在一起了 😘</h2>
+        <h2>😘彭丫丫 和 凌狗狗 已经在一起了😘</h2>
+
         <div class="timer">
             <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
         <div class="toyy">
@@ -102,19 +103,39 @@
         timer();
         setInterval(timer, 1000);
 
-        
+
+        function audioAutoPlay(id){  
+        var audio = document.getElementById(id),
+            play = function(){  
+                audio.play();  
+                document.removeEventListener("touchstart",play, false);  
+            };  
+        audio.play();  
+        document.addEventListener("WeixinJSBridgeReady", function () {  
+            play();  
+        }, false);  
+        document.addEventListener('YixinJSBridgeReady', function() {  
+            play();  
+        }, false);  
+        document.addEventListener("touchstart",play, false);  
+            }  
+        audioAutoPlay('audios');
+      
+  
+
+
        
 
 
     </script>
 
 <!-- 有控制器,chrome不能自动播放,Safari可以 -->
-<!-- <audio autoplay="autoplay" loop="loop" preload="auto" controls="controls"
+<audio autoplay="autoplay" loop="loop" preload="auto" controls="controls"
     src="https://music.163.com/song/media/outer/url?id=167876.mp3">
-</audio>  -->
+</audio> 
 
 <!-- //无控制器,完全隐藏 -->
-<audio id="music" src="https://music.163.com/song/media/outer/url?id=167876.mp3" autoplay preload="auto" loop="loop">该浏览器不支持audio属性</audio>
+<!-- <audio id="music" src="https://music.163.com/song/media/outer/url?id=167876.mp3" autoplay preload="auto" loop="loop">该浏览器不支持audio属性</audio> -->
 
 <!-- iframe格式hidden -->
 <!-- <iframe src = "https://music.163.com/song/media/outer/url?id=167876.mp3" allow = "autoplay" hidden /> -->
